@@ -1,4 +1,4 @@
-React - Redux
+React - Redux - To do List
 
 npx create-react-app react-redux
 
