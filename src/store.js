@@ -22,12 +22,12 @@ const reducer = (state = [], action) => {
         case ADD:
             return [{text: action.text, id: Date.naw()}, ...state];
         case DELETE:
-            return state.filter(toDO => toDo !== action.id);
+            return state.filter(toDo => toDo !== action.id);
         default:
             return state;
     }
 }
 
-const store = createStore();
+const store = createStore(reducer);
 
 export default store;

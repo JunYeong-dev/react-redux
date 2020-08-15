@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 
 function Home(){
     const [text, setText] = useState("");
@@ -21,4 +22,9 @@ function Home(){
     );
 }
 
-export default Home;
+function getCurrentState(state, ownProps){
+    console.log(state, ownProps);
+}
+
+// connect : components와 store를 연결시켜줌
+export default connect(getCurrentState)(Home);
