@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
-function Home(){
+function Home(props){
+    console.log(props);
     const [text, setText] = useState("");
     function onChange(e){
         setText(e.target.value);
@@ -22,9 +23,11 @@ function Home(){
     );
 }
 
-function getCurrentState(state, ownProps){
-    console.log(state, ownProps);
+// redux state로 부터 component에 prop를 전달하는 function
+function mapStateToProps(state, ownProps){
+    // return 해주는 object는 connect로 연결해 준 곳으로 감
+    return { toDos: state }
 }
 
 // connect : components와 store를 연결시켜줌
-export default connect(getCurrentState)(Home);
+export default connect(mapStateToProps)(Home);
